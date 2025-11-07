@@ -5,7 +5,7 @@ import 'package:wallpaper_studio/pages/favouritepage.dart';
 import 'package:wallpaper_studio/pages/homepage.dart';
 import 'package:wallpaper_studio/pages/settings.dart';
 import 'package:wallpaper_studio/widgets/category_card.dart';
-import 'package:wallpaper_studio/widgets/nav_button_item.dart';
+import 'package:wallpaper_studio/widgets/nav_item.dart';
 
 class SmallScreenHomepage extends StatelessWidget {
   const SmallScreenHomepage({

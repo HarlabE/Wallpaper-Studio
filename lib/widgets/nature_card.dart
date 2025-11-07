@@ -1,16 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:wallpaper_studio/data/categories.dart';
 import 'package:wallpaper_studio/models/category.dart';
 
-class NatureCategoryCard extends StatelessWidget {
+class NatureCategoryCard extends StatefulWidget {
   final NatureCategory category;
   final VoidCallback? onTap;
 
   const NatureCategoryCard({super.key, required this.category, this.onTap});
 
   @override
+  State<NatureCategoryCard> createState() => _NatureCategoryCardState();
+}
+
+class _NatureCategoryCardState extends State<NatureCategoryCard> {
+  late bool fav;
+  @override
+  void initState() {
+    fav = widget.category.isFavorite;
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: widget.onTap,
       child: Card(
         clipBehavior: Clip.antiAlias,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
@@ -18,7 +31,7 @@ class NatureCategoryCard extends StatelessWidget {
           fit: StackFit.expand,
           children: [
             Image.asset(
-              category.imageUrl,
+              widget.category.imageUrl,
               fit: BoxFit.cover,
               errorBuilder: (context, error, stackTrace) =>
                   Center(child: Icon(Icons.broken_image)),
@@ -42,7 +55,7 @@ class NatureCategoryCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    category.name,
+                    widget.category.name,
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 16,
@@ -62,15 +75,31 @@ class NatureCategoryCard extends StatelessWidget {
               child: Container(
                 padding: EdgeInsets.all(4),
                 decoration: BoxDecoration(
-                  color: category.isFavorite
+                  color: widget.category.isFavorite
                       ? Colors.redAccent
                       : Colors.black54,
                   shape: BoxShape.circle,
                 ),
-                child: Icon(
-                  category.isFavorite ? Icons.favorite : Icons.favorite_border,
-                  color: Colors.white,
-                  size: 18,
+                child: IconButton(
+                  icon: Icon(
+                    widget.category.isFavorite
+                        ? Icons.favorite
+                        : Icons.favorite_border,
+                    color: Colors.white,
+                    size: 18,
+                  ),
+                  onPressed: () {
+                    // Handle favorite toggle
+
+                    if (widget.category.isFavorite) {
+                      favouriteWallpaper.add(widget.category);
+                      setState(() {
+                        fav = !fav;
+                      });
+                    } else {
+                      favouriteWallpaper.remove(widget.category);
+                    }
+                  },
                 ),
               ),
             ),

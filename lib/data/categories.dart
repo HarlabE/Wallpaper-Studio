@@ -77,3 +77,5 @@ final List<WallpaperItem> dummyWallpapers = [
     imageUrl: 'assets/nature6.png',
   ),
 ];
+
+const favouriteWallpaper = [];

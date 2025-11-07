@@ -3,7 +3,8 @@ import 'package:wallpaper_studio/pages/browsepage.dart';
 import 'package:wallpaper_studio/pages/favouritepage.dart';
 import 'package:wallpaper_studio/pages/homepage.dart';
 import 'package:wallpaper_studio/widgets/nav_button.dart';
-import 'package:wallpaper_studio/widgets/nav_button_Item.dart';
+import 'package:wallpaper_studio/widgets/nav_item.dart';
+// import 'package:wallpaper_studio/widgets/nav_button_Item.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});

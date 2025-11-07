@@ -9,7 +9,7 @@ import 'package:wallpaper_studio/pages/settings.dart';
 import 'package:wallpaper_studio/widgets/set_wallapaper.dart';
 import 'package:wallpaper_studio/widgets/nature_card.dart';
 import 'package:wallpaper_studio/widgets/nav_button.dart';
-import 'package:wallpaper_studio/widgets/nav_button_item.dart';
+import 'package:wallpaper_studio/widgets/nav_item.dart';
 
 class WallpaperDetailsScreen extends StatefulWidget {
   const WallpaperDetailsScreen({super.key});

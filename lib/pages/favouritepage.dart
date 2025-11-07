@@ -5,7 +5,8 @@ import 'package:wallpaper_studio/pages/homepage.dart';
 import 'package:wallpaper_studio/pages/settings.dart';
 import 'package:wallpaper_studio/widgets/favourite_wallpaper_card.dart';
 import 'package:wallpaper_studio/widgets/nav_button.dart';
-import 'package:wallpaper_studio/widgets/nav_button_Item.dart';
+import 'package:wallpaper_studio/widgets/nav_item.dart';
+// import 'package:wallpaper_studio/widgets/nav_button_Item.dart';
 
 class SavedWallpapersScreen extends StatelessWidget {
   const SavedWallpapersScreen({super.key});
@@ -135,7 +136,7 @@ class SavedWallpapersScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // Gradient Text
+                      
                       ShaderMask(
                         shaderCallback: (bounds) => const LinearGradient(
                           colors: [Color(0xFFF9A825), Color(0xFFE91E63)],
@@ -176,8 +177,8 @@ class SavedWallpapersScreen extends StatelessWidget {
                     childAspectRatio: 0.6,
                   ),
                   delegate: SliverChildBuilderDelegate((context, index) {
-                    return FavouriteWallpaperCard(item: displayList[index]);
-                  }, childCount: displayList.length),
+                    return FavouriteWallpaperCard(item: favouriteWallpaper[index]);
+                  }, childCount: favouriteWallpaper.length),
                 ),
               ),
             ],

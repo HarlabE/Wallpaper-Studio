@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:wallpaper_studio/pages/homepage.dart';
 
 void main() {
@@ -15,10 +16,13 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
-          primary: Color(0xffFBB03B),
-          secondary: Color(0xffEC0C43),
+          seedColor: const Color.fromARGB(255, 254, 253, 255),
+          primary: const Color(0xffFBB03B),
+          secondary: const Color(0xffEC0C43),
         ),
+        textTheme: Theme.of(
+          context,
+        ).textTheme.apply(fontFamily: GoogleFonts.poppins().fontFamily),
       ),
       home: Homepage(isBrowseActive: false, isHomeActive: true),
     );
